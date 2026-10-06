@@ -1,0 +1,714 @@
+/* ==============================
+   RESET
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ==============================
+   BODY
+================================ */
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    color: #f5f7fb;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(0, 229, 176, 0.10),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 90%,
+            rgba(124, 92, 255, 0.10),
+            transparent 30%
+        ),
+        #070b13;
+
+    display: flex;
+    justify-content: center;
+
+    padding: 50px 20px;
+}
+
+
+/* ==============================
+   MAIN CONTAINER
+================================ */
+
+.app-container {
+    width: 100%;
+    max-width: 760px;
+}
+
+
+/* ==============================
+   HERO
+================================ */
+
+.hero {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 7px 14px;
+
+    border: 1px solid rgba(0, 229, 176, 0.25);
+
+    border-radius: 50px;
+
+    background: rgba(0, 229, 176, 0.06);
+
+    color: #00e5b0;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.badge span {
+    font-size: 14px;
+}
+
+.hero h1 {
+    margin-top: 18px;
+
+    font-size: clamp(2.4rem, 7vw, 4rem);
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+}
+
+.hero h1 span {
+    color: #00e5b0;
+}
+
+.hero p {
+    max-width: 570px;
+
+    margin: 18px auto 0;
+
+    color: #8795aa;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* ==============================
+   QUIZ CARD
+================================ */
+
+.quiz-card,
+.result-card {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20, 30, 46, 0.96),
+            rgba(10, 16, 27, 0.96)
+        );
+
+    border: 1px solid #253249;
+
+    border-radius: 22px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.35);
+}
+
+
+/* ==============================
+   QUIZ TOP
+================================ */
+
+.quiz-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.small-label,
+.question-label,
+.result-label {
+    display: block;
+
+    color: #718198;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+}
+
+.quiz-top h2 {
+    margin-top: 5px;
+
+    font-size: 20px;
+}
+
+.score-box {
+    text-align: right;
+}
+
+.score-box strong {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #00e5b0;
+
+    font-size: 22px;
+}
+
+
+/* ==============================
+   PROGRESS
+================================ */
+
+.progress-wrapper {
+    margin-bottom: 20px;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+
+    color: #718198;
+
+    font-size: 11px;
+}
+
+#progress-text {
+    color: #00e5b0;
+}
+
+.progress-container {
+    height: 7px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #202c3e;
+}
+
+#progress-bar {
+    width: 10%;
+    height: 100%;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #00cfa0,
+            #00e5b0
+        );
+
+    transition:
+        width 0.4s ease;
+}
+
+
+/* ==============================
+   TIMER
+================================ */
+
+.timer-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    width: fit-content;
+
+    margin: 0 auto 30px;
+
+    padding: 8px 14px;
+
+    border: 1px solid #2a394e;
+
+    border-radius: 50px;
+
+    background: #101a29;
+
+    color: #7e8da4;
+
+    font-size: 12px;
+}
+
+.timer-box strong {
+    color: #f5f7fb;
+
+    min-width: 20px;
+
+    text-align: center;
+}
+
+.timer-warning {
+    border-color: #ffb84d;
+
+    color: #ffb84d;
+}
+
+.timer-danger {
+    border-color: #ff5574;
+
+    color: #ff5574;
+}
+
+
+/* ==============================
+   QUESTION
+================================ */
+
+.question-area {
+    margin-bottom: 25px;
+}
+
+.question-label {
+    margin-bottom: 10px;
+
+    color: #00e5b0;
+}
+
+#question {
+    font-size: clamp(1.25rem, 3vw, 1.65rem);
+
+    line-height: 1.5;
+
+    font-weight: 650;
+
+    letter-spacing: -0.3px;
+}
+
+
+/* ==============================
+   ANSWERS
+================================ */
+
+.answers-container {
+    display: grid;
+
+    gap: 11px;
+}
+
+.answer-button {
+    position: relative;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    padding: 15px 17px;
+
+    border: 1px solid #2b394e;
+
+    border-radius: 12px;
+
+    background: #111b2a;
+
+    color: #dce4ef;
+
+    font-size: 14px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.answer-button::before {
+    content: "";
+
+    width: 8px;
+    height: 8px;
+
+    margin-right: 13px;
+
+    border: 1px solid #52627a;
+
+    border-radius: 50%;
+
+    flex-shrink: 0;
+}
+
+.answer-button:hover {
+    transform: translateX(4px);
+
+    border-color: #00e5b0;
+
+    background: #152437;
+}
+
+.answer-button.correct {
+    border-color: #00e5b0;
+
+    background: rgba(0, 229, 176, 0.09);
+
+    color: #00e5b0;
+}
+
+.answer-button.correct::before {
+    border-color: #00e5b0;
+
+    background: #00e5b0;
+}
+
+.answer-button.wrong {
+    border-color: #ff5574;
+
+    background: rgba(255, 85, 116, 0.09);
+
+    color: #ff718a;
+}
+
+.answer-button.wrong::before {
+    border-color: #ff5574;
+
+    background: #ff5574;
+}
+
+.answer-button:disabled {
+    cursor: not-allowed;
+}
+
+
+/* ==============================
+   FEEDBACK
+================================ */
+
+.feedback {
+    min-height: 25px;
+
+    margin-top: 18px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.feedback-correct {
+    color: #00e5b0;
+}
+
+.feedback-wrong {
+    color: #ff6b85;
+}
+
+
+/* ==============================
+   NEXT BUTTON
+================================ */
+
+.next-button,
+.restart-button {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 14px 18px;
+
+    margin-top: 18px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background: #00e5b0;
+
+    color: #06110e;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.next-button:hover:not(:disabled),
+.restart-button:hover {
+    transform: translateY(-2px);
+}
+
+.next-button:disabled {
+    opacity: 0.35;
+
+    cursor: not-allowed;
+}
+
+
+/* ==============================
+   RESULT
+================================ */
+
+.result-card {
+    text-align: center;
+
+    animation: resultAppear 0.5s ease;
+}
+
+.result-icon {
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+
+    background: rgba(0, 229, 176, 0.08);
+
+    font-size: 30px;
+}
+
+.result-label {
+    color: #00e5b0;
+
+    margin-bottom: 8px;
+}
+
+.result-card h2 {
+    font-size: 27px;
+
+    margin-bottom: 25px;
+}
+
+
+/* ==============================
+   SCORE CIRCLE
+================================ */
+
+.final-score-circle {
+    width: 150px;
+    height: 150px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto 20px;
+
+    border: 7px solid #00e5b0;
+
+    border-radius: 50%;
+
+    background: #101a29;
+
+    box-shadow:
+        0 0 35px rgba(0, 229, 176, 0.08);
+}
+
+.final-score-circle strong {
+    color: #00e5b0;
+
+    font-size: 35px;
+}
+
+.final-score-circle span {
+    color: #78869b;
+
+    font-size: 11px;
+
+    margin-top: 2px;
+}
+
+.final-score-text {
+    color: #9aa8ba;
+
+    font-size: 14px;
+
+    margin-bottom: 20px;
+}
+
+
+/* ==============================
+   HIGH SCORE
+================================ */
+
+.high-score-box {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    max-width: 280px;
+
+    margin: 0 auto;
+
+    padding: 13px 16px;
+
+    border: 1px solid #2a394e;
+
+    border-radius: 12px;
+
+    background: #101a29;
+
+    text-align: left;
+}
+
+.high-score-box > div:first-child {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: rgba(255, 190, 70, 0.1);
+}
+
+.high-score-box small {
+    display: block;
+
+    color: #718198;
+
+    font-size: 9px;
+
+    letter-spacing: 1.3px;
+}
+
+.high-score-box strong {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #f5f7fb;
+
+    font-size: 14px;
+}
+
+.restart-button {
+    max-width: 280px;
+
+    margin: 22px auto 0;
+}
+
+
+/* ==============================
+   FOOTER
+================================ */
+
+footer {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+
+    margin-top: 22px;
+
+    color: #59687d;
+
+    font-size: 11px;
+}
+
+
+/* ==============================
+   HIDDEN
+================================ */
+
+.hidden {
+    display: none;
+}
+
+
+/* ==============================
+   ANIMATION
+================================ */
+
+@keyframes resultAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ==============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 30px 12px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .quiz-card,
+    .result-card {
+        padding: 22px 18px;
+    }
+
+    .quiz-top {
+        margin-bottom: 20px;
+    }
+
+    .answer-button {
+        padding: 14px;
+    }
+
+    #question {
+        font-size: 1.2rem;
+    }
+
+}

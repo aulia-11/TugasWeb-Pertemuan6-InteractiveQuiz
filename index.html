@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Interactive Quiz App | Tugas Rutin 6</title>
+
+    <meta
+        name="description"
+        content="Interactive Quiz App untuk Tugas Rutin 6 Pemrograman Web."
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="app-container">
+
+        <!-- HEADER -->
+        <header class="hero">
+
+            <div class="badge">
+                <span>✦</span>
+                TUGAS RUTIN 6
+            </div>
+
+            <h1>
+                Interactive
+                <span>Quiz</span>
+            </h1>
+
+            <p>
+                Uji pemahamanmu tentang dasar-dasar web dan JavaScript.
+                Jawab semua pertanyaan dan raih skor terbaikmu.
+            </p>
+
+        </header>
+
+
+        <!-- QUIZ CARD -->
+        <section class="quiz-card" id="quiz-card">
+
+            <!-- TOP INFO -->
+            <div class="quiz-top">
+
+                <div>
+                    <span class="small-label">PERTANYAAN</span>
+
+                    <h2 id="question-number">
+                        01 / 10
+                    </h2>
+                </div>
+
+                <div class="score-box">
+
+                    <span class="small-label">
+                        SKOR
+                    </span>
+
+                    <strong id="score-display">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROGRESS -->
+            <div class="progress-wrapper">
+
+                <div class="progress-info">
+                    <span>Progress</span>
+
+                    <span id="progress-text">
+                        10%
+                    </span>
+                </div>
+
+                <div class="progress-container">
+                    <div id="progress-bar"></div>
+                </div>
+
+            </div>
+
+
+            <!-- TIMER -->
+            <div class="timer-box">
+
+                <span>⏱</span>
+
+                <span>
+                    Waktu:
+                </span>
+
+                <strong id="timer">
+                    15
+                </strong>
+
+                <span>
+                    detik
+                </span>
+
+            </div>
+
+
+            <!-- QUESTION -->
+            <div class="question-area">
+
+                <span class="question-label">
+                    PERTANYAAN
+                </span>
+
+                <h3 id="question">
+                    Pertanyaan akan muncul di sini.
+                </h3>
+
+            </div>
+
+
+            <!-- ANSWERS -->
+            <div id="answers" class="answers-container">
+            </div>
+
+
+            <!-- FEEDBACK -->
+            <div id="feedback" class="feedback">
+            </div>
+
+
+            <!-- NEXT BUTTON -->
+            <button
+                id="next-button"
+                class="next-button"
+                disabled
+            >
+                <span>Soal Berikutnya</span>
+                <span>→</span>
+            </button>
+
+        </section>
+
+
+        <!-- RESULT -->
+        <section
+            id="result-section"
+            class="result-card hidden"
+        >
+
+            <div class="result-icon">
+                🎉
+            </div>
+
+            <span class="result-label">
+                QUIZ SELESAI
+            </span>
+
+            <h2>
+                Hasil Quiz Kamu
+            </h2>
+
+            <div class="final-score-circle">
+
+                <strong id="percentage-score">
+                    0%
+                </strong>
+
+                <span>
+                    Nilai
+                </span>
+
+            </div>
+
+            <p
+                id="final-score"
+                class="final-score-text"
+            >
+                Skor kamu: 0 dari 10
+            </p>
+
+            <div class="high-score-box">
+
+                <div>
+                    <span>🏆</span>
+                </div>
+
+                <div>
+                    <small>
+                        HIGH SCORE
+                    </small>
+
+                    <strong id="high-score">
+                        0 dari 10
+                    </strong>
+                </div>
+
+            </div>
+
+            <button
+                id="restart-button"
+                class="restart-button"
+            >
+                ↻ Ulangi Quiz
+            </button>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer>
+
+            <span>
+                Interactive Quiz App
+            </span>
+
+            <span>
+                •
+            </span>
+
+            <span>
+                Tugas Rutin 6
+            </span>
+
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
