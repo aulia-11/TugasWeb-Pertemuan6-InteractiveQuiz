@@ -1,7 +1,3 @@
-/* ==============================
-   DATA SOAL
-================================ */
-
 const questions = [
     {
         question: "Apa yang dimaksud dengan HTML?",
@@ -115,9 +111,6 @@ const questions = [
 ];
 
 
-/* ==============================
-   STATE
-================================ */
 
 let currentQuestion = 0;
 
@@ -130,9 +123,6 @@ let timer;
 let timeLeft = 15;
 
 
-/* ==============================
-   ELEMENT
-================================ */
 
 const questionElement =
     document.getElementById("question");
@@ -180,9 +170,6 @@ const timerElement =
     document.getElementById("timer");
 
 
-/* ==============================
-   SHOW QUESTION
-================================ */
 
 function showQuestion() {
 
@@ -209,8 +196,6 @@ function showQuestion() {
         questions[currentQuestion];
 
 
-    /* QUESTION NUMBER */
-
     const number =
         String(currentQuestion + 1).padStart(2, "0");
 
@@ -218,19 +203,13 @@ function showQuestion() {
         `${number} / ${questions.length}`;
 
 
-    /* QUESTION */
-
     questionElement.textContent =
         question.question;
 
 
-    /* SCORE */
-
     scoreDisplay.textContent =
         score;
 
-
-    /* PROGRESS */
 
     const progress =
         ((currentQuestion + 1) / questions.length) * 100;
@@ -242,12 +221,10 @@ function showQuestion() {
         `${progress}%`;
 
 
-    /* REMOVE OLD ANSWERS */
 
     answersElement.innerHTML = "";
 
 
-    /* CREATE ANSWERS */
 
     question.answers.forEach((answer, index) => {
 
@@ -272,10 +249,6 @@ function showQuestion() {
     startTimer();
 }
 
-
-/* ==============================
-   TIMER
-================================ */
 
 function startTimer() {
 
@@ -321,9 +294,6 @@ function startTimer() {
 }
 
 
-/* ==============================
-   TIME UP
-================================ */
 
 function timeUp() {
 
@@ -347,9 +317,6 @@ function timeUp() {
 }
 
 
-/* ==============================
-   EVENT DELEGATION
-================================ */
 
 answersElement.addEventListener(
     "click",
@@ -430,9 +397,6 @@ answersElement.addEventListener(
 );
 
 
-/* ==============================
-   DISABLE ANSWERS
-================================ */
 
 function disableAnswers() {
 
@@ -449,9 +413,6 @@ function disableAnswers() {
 }
 
 
-/* ==============================
-   SHOW CORRECT ANSWER
-================================ */
 
 function showCorrectAnswer() {
 
@@ -471,10 +432,6 @@ function showCorrectAnswer() {
     }
 }
 
-
-/* ==============================
-   NEXT QUESTION
-================================ */
 
 nextButton.addEventListener(
     "click",
@@ -500,9 +457,6 @@ nextButton.addEventListener(
 );
 
 
-/* ==============================
-   FINISH QUIZ
-================================ */
 
 function finishQuiz() {
 
@@ -518,7 +472,6 @@ function finishQuiz() {
         );
 
 
-    /* FINAL SCORE */
 
     finalScore.textContent =
         `Skor kamu: ${score} dari ${totalQuestions}`;
@@ -528,7 +481,6 @@ function finishQuiz() {
         `${percentage}%`;
 
 
-    /* HIGH SCORE */
 
     const oldHighScore =
         Number(
@@ -560,8 +512,6 @@ function finishQuiz() {
         `${highScore} dari ${totalQuestions}`;
 
 
-    /* SHOW RESULT */
-
     quizCard.classList.add(
         "hidden"
     );
@@ -572,10 +522,6 @@ function finishQuiz() {
 
 }
 
-
-/* ==============================
-   RESTART
-================================ */
 
 restartButton.addEventListener(
     "click",
@@ -604,9 +550,5 @@ restartButton.addEventListener(
     }
 );
 
-
-/* ==============================
-   START QUIZ
-================================ */
 
 showQuestion();
